@@ -32,7 +32,7 @@ get_playlist_items_data = get_playlist_items.playlist_items("7ph7m06tPuDBxUnX4WN
 # This is the original data returned by Spotify.
 # print(json.dumps(get_playlist_items.playlist_items("7ph7m06tPuDBxUnX4WNf9q"), indent=4, sort_keys=True))
 
-# Create empty dictionary to store nested dictionaries.
+# Create empty list to store dictionaries.
 tracks_dictionary = []
 
 # Create loop to iterate through playlist tracks.
