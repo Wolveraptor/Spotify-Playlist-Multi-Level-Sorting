@@ -9,7 +9,7 @@ from spotify_developer_application import (spotify_client_id,
                                           spotify_client_secret,
                                           spotify_redirect_uri)
 
-# Authorization Code Flow to obtain user details.
+# Authorization Code Flow to obtain current user's profile.
 get_current_users_profile = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
                                                client_secret=spotify_client_secret,
                                                redirect_uri=spotify_redirect_uri,
