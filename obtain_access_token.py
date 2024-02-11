@@ -23,8 +23,10 @@ authorization_url = "https://accounts.spotify.com/api/token"
 # Make POST request to authorization token URL and store results in the "authorization_token_response" variable.
 authorization_response = requests.post(authorization_url, data = authorization_body, headers = authorization_headers)
 
+# Create if statement to perform action(s) if the response code is not 200.
 if authorization_response.status_code != 200:
     print("Failed to obtain access token.")
+# Create elif statement to perform action(s) if the response code is 200.
 elif authorization_response.status_code == 200:
     # Store the "access_token" value to make API calls to the "access_token" variable.
     access_token = authorization_response.json()['access_token']
