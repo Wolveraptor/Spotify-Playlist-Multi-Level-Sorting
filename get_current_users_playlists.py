@@ -26,7 +26,7 @@ playlists_dictionary = {}
 # Create loop to iterate through playlists.
 for playlists in range(len(get_current_users_playlists.current_user_playlists()["items"])):
     # Create empty dictionary to store data about each playlist.
-    # This dictionary will be the value the key which is the playlist.
+    # This dictionary will be the value of the key which is the playlist.
     playlists_data_dictionary = {}
     # Update playlists_data_dictionary with key:value pair.
     playlists_data_dictionary.update({"owner":get_current_users_playlists.current_user_playlists()["items"][playlists]["owner"]["display_name"]})
