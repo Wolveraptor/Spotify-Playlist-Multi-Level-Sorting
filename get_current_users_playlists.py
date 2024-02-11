@@ -17,8 +17,26 @@ get_current_users_playlists = spotipy.Spotify(auth_manager=SpotifyOAuth(client_i
                                                scope="playlist-read-private"))
 
 # Print current user's playlists in console.
-print(json.dumps(get_current_users_playlists.current_user_playlists(), indent=4, sort_keys=True))
-print(f"Playlist Name: {get_current_users_playlists.current_user_playlists()["items"][0]["name"]}")
-print(f"Playlist Owner: {get_current_users_playlists.current_user_playlists()["items"][0]["owner"]["display_name"]}")
-print(f"Playlist ID: {get_current_users_playlists.current_user_playlists()["items"][0]["owner"]["id"]}")
-print(f"Playlist Tracks: {get_current_users_playlists.current_user_playlists()["items"][0]["tracks"]["total"]}")
+# This is the original data returned by Spotify.
+# print(json.dumps(get_current_users_playlists.current_user_playlists(), indent=4, sort_keys=True))
+
+# Create empty dictionary to store nested dictionaries.
+playlists_dictionary = {}
+
+# Create loop to iterate through playlists.
+for playlists in range(len(get_current_users_playlists.current_user_playlists()["items"])):
+    # Create empty dictionary to store data about each playlist.
+    # This dictionary will be the value the key which is the playlist.
+    playlists_data_dictionary = {}
+    # Update playlists_data_dictionary with key:value pair.
+    playlists_data_dictionary.update({"owner":get_current_users_playlists.current_user_playlists()["items"][playlists]["owner"]["display_name"]})
+    # Update playlists_data_dictionary with key:value pair.
+    playlists_data_dictionary.update({"id":get_current_users_playlists.current_user_playlists()["items"][playlists]["id"]})
+    # Update playlists_data_dictionary with key:value pair.
+    playlists_data_dictionary.update({"tracks":get_current_users_playlists.current_user_playlists()["items"][playlists]["tracks"]["total"]})
+    # Update playlists_dictionary with key:value pair.
+    # The key is the name of the playlist and the value is playlists_data_dictionary
+    playlists_dictionary.update({get_current_users_playlists.current_user_playlists()["items"][playlists]["name"]:playlists_data_dictionary})
+
+# Print current users's playlists in console
+print(json.dumps(playlists_dictionary, indent=4, sort_keys=False))
