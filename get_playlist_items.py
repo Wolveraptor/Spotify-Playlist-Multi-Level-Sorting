@@ -33,7 +33,7 @@ get_playlist_items_data = get_playlist_items.playlist_items("7ph7m06tPuDBxUnX4WN
 # print(json.dumps(get_playlist_items.playlist_items("7ph7m06tPuDBxUnX4WNf9q"), indent=4, sort_keys=True))
 
 # Create empty list to store dictionaries.
-tracks_dictionary = []
+tracks_list = []
 
 # Create loop to iterate through playlist tracks.
 for tracks in range(len(get_playlist_items_data["items"])):
@@ -53,14 +53,14 @@ for tracks in range(len(get_playlist_items_data["items"])):
     tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
     # Update tracks_data__dictionary with key:value pair.
     tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
-    tracks_dictionary.append(tracks_data_dictionary)
+    tracks_list.append(tracks_data_dictionary)
 
 # Sort list of dictionaries by multiple keys.
 # Sorting is performed by artist, release_date, album, disc_number, and then track_number
 # The casefold() method returns all characters as lowercase.
 # If this is not performed, uppercase and lowercase characters will be sorted separately even if they are the same character.
 # By default, sorting is performed in ASCIIbetical order which puts uppercase letters before lowercase letters.
-tracks_dictionary = sorted(tracks_dictionary,
+tracks_list = sorted(tracks_list,
                            key=lambda track:
                            (track["artist"].casefold(),
                             track["release_date"].casefold(),
@@ -69,4 +69,4 @@ tracks_dictionary = sorted(tracks_dictionary,
                             track["track_number"]))
 
 # Print current users's playlist tracks in console
-print(json.dumps(tracks_dictionary, indent=4, sort_keys=False))
+print(json.dumps(tracks_list, indent=4, sort_keys=False))
