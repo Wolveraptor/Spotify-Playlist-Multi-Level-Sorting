@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # Custom files
-spotify_credentials.py
+spotify_developer_application.py
