@@ -5,6 +5,8 @@ Spotify playlist multi-level sorting.
 This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API.
 
 ### Execution
+THIS IS NOT READY FOR PRODUCTION!
+
 The spotify credentials are stored in a file that is not configured to be uploaded to GitHub as it contains my Client ID and Client Secret.
 
 If you wish to use this, upon cloning this repository you will need to create a file called `spotify_developer_application.py` that contains three variables:
