@@ -16,5 +16,5 @@ get_current_users_profile = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=
                                                # Scopes required for obtaining current user's profile can be found here: https://developer.spotify.com/documentation/web-api/reference/get-current-users-profile
                                                scope="user-read-private user-read-email"))
 
-# Print user details in console.
+# Print current's user profile in console.
 print(json.dumps(get_current_users_profile.me(), indent=4, sort_keys=True))
