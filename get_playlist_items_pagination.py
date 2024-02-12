@@ -4,10 +4,11 @@ import json
 # spotipy is used for authenticating with the Spotify web API.
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-# spotify_developer_application is used for passing the spotify_client_id, spotify_client_secret, and spotify_redirect_uri variables.
+# spotify_developer_application is used for passing the spotify_client_id, spotify_client_secret, spotify_redirect_uri, and spotify_playlist_id variables.
 from spotify_developer_application import (spotify_client_id,
                                            spotify_client_secret,
-                                           spotify_redirect_uri)
+                                           spotify_redirect_uri,
+                                           spotify_playlist_id)
 
 # Authorization Code Flow to obtain current user's playlists.
 get_playlist_items = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
@@ -17,7 +18,7 @@ get_playlist_items = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify
                                                                scope="playlist-read-private"))
 
 # Create variable to store data from playlist_items method of spotipy
-get_playlist_items_data = get_playlist_items.playlist_items("41ANX0ESVQ3WFrfHiF7QdG",
+get_playlist_items_data = get_playlist_items.playlist_items(spotify_playlist_id,
                                                             offset=0,
                                                             additional_types=['track'])
             
