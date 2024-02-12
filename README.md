@@ -7,6 +7,13 @@ This is my repository for my project of creating a way to perform multi-level so
 ### Execution
 THIS IS NOT READY FOR PRODUCTION!
 
+This will sort a Spotify playlist in the following multi-level order:
+* artist
+* release_date
+* album
+* disc_number
+* track_number
+
 The spotify credentials are stored in a file that is not configured to be uploaded to GitHub as it contains my Client ID and Client Secret.
 
 If you wish to use this, upon cloning this repository you will need to create a file called `spotify_developer_application.py` that contains four variables:
