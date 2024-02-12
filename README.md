@@ -8,7 +8,7 @@ This is my repository for my project of creating a way to perform multi-level so
 The python package `spotipy` is required for execution.
 
 This will sort a Spotify playlist in the following multi-level order:
-* album artist
+* artist
 * release_date
 * album
 * disc_number
