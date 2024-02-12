@@ -15,7 +15,6 @@ def connect_to_spotify_api(application_client_id, application_client_secret, app
     spotify_authorization = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=application_client_id,
                                                                       client_secret=application_client_secret,
                                                                       redirect_uri=application_redirect_uri,
-                                                                      # Scopes required for obtaining current user's profile can be found here: https://developer.spotify.com/documentation/web-api/reference/get-current-users-profile
                                                                       # Scopes required for obtaining current user's playlists can be found here: https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
                                                                       # Scopes required for modifying current user's playlists can be found here: https://developer.spotify.com/documentation/web-api/reference/reorder-or-replace-playlists-tracks
                                                                       scope="playlist-read-private playlist-modify-public"))
