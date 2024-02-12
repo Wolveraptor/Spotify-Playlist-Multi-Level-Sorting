@@ -39,8 +39,7 @@ for playlists in range(len(get_current_users_playlists_data["items"])):
     playlists_data_dictionary.update({"id":get_current_users_playlists_data["items"][playlists]["id"]})
     # Update playlists_data_dictionary with key:value pair.
     playlists_data_dictionary.update({"tracks":get_current_users_playlists_data["items"][playlists]["tracks"]["total"]})
-    # Update playlists_dictionary with key:value pair.
-    # The key is the name of the playlist and the value is playlists_data_dictionary
+    # Append playlists_list with playlists_data_dictionary
     playlists_list.append(playlists_data_dictionary)
 
 # Print current users's playlists in console
