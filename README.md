@@ -28,4 +28,6 @@ The spotify credentials are stored in a file that is not configured to be upload
     * `spotify_application_client_secret = "Client Secret from Spotify Developer Dashboard"`
         * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
     * `spotify_application_redirect_uri = "https://localhost/"`
-5. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
+5. Install the `spotipy` Python package.
+    * Installation instructions can be found [here](https://pypi.org/project/spotipy/).
+6. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
