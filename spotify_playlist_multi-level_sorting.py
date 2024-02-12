@@ -140,15 +140,18 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
     ids_list_of_lists = []
 
     # Slice the ids_list into smaller 100 item lists and add them to ids_list_of_lists
-    # Need to add additional comments for clarity for list slicing.
     # Additional information can be found here: https://www.geeksforgeeks.org/break-list-chunks-size-n-python/
-    # Additional information can be found here: https://stackoverflow.com/questions/33491703/meaning-of-x-x-1-in-python
+    # Additional information can be found here: https://www.geeksforgeeks.org/python-list-slicing/
+    # Starting item in list. 0 is the first item. We start at 0 because this is eventually passed to the range() function.
     start = 0
-    end = len(ids_list) 
+    # Ending item in list. Gathered from the len() function.
+    end = len(ids_list)
+    # Increments to take. Will gather 100 track ids at a time.
     step = 100
-    for i in range(start, end, step): 
-        x = i 
-        ids_list_of_lists.append((ids_list[x:x+step]))
+    # Create loop to iterate through tracks and append lists of 100 track ids to ids_list_of_lists
+    for track_ids in range(start, end, step): 
+        sliced_track_ids = track_ids
+        ids_list_of_lists.append((ids_list[sliced_track_ids:sliced_track_ids+step]))
 
     # Create loop to iterate through ids lists to delete all tracks in the playlist.
     for ids_list in range(len(ids_list_of_lists)):
