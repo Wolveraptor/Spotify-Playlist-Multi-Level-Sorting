@@ -43,6 +43,7 @@ for tracks in range(len(get_playlist_items_data["items"])):
     tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
     # Update tracks_data__dictionary with key:value pair.
     tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
+    # Append playlists_data_dictionary to tracks_list
     tracks_list.append(tracks_data_dictionary)
 
 # Create while loop to look for next set of paginated results.
@@ -67,6 +68,7 @@ while get_playlist_items_data["next"]:
         tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
         # Update tracks_data__dictionary with key:value pair.
         tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
+        # Append playlists_data_dictionary to tracks_list
         tracks_list.append(tracks_data_dictionary)
 
 # Sort list of dictionaries by multiple keys.
