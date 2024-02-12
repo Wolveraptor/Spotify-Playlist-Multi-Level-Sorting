@@ -25,8 +25,10 @@ The spotify credentials are stored in a file that is not configured to be upload
 4. Edit the following lines:
     * `spotify_application_client_id = "Client ID from Spotify Developer Dashboard"`
         * Replace `Client ID from Spotify Developer Dashboard` with the client ID from the Spotify developer dashboard.
+        * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
     * `spotify_application_client_secret = "Client Secret from Spotify Developer Dashboard"`
         * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
+        * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
     * `spotify_application_redirect_uri = "https://localhost/"`
 5. Install the `spotipy` Python package.
     * Installation instructions can be found [here](https://pypi.org/project/spotipy/).
