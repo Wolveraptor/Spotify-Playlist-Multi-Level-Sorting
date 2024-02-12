@@ -14,7 +14,7 @@ from spotify_developer_application import (spotify_client_id,
 get_playlist_items = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
                                                                client_secret=spotify_client_secret,
                                                                redirect_uri=spotify_redirect_uri,
-                                                               # Scopes required for reordering current user's playlist can be found here: https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
+                                                               # Scopes required for reordering or replacing current user's playlist tracks can be found here: https://developer.spotify.com/documentation/web-api/reference/reorder-or-replace-playlists-tracks
                                                                scope='playlist-modify-public'))
 
 # Create variable to store data from playlist_items method of spotipy
