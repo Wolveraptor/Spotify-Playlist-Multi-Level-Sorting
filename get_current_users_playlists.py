@@ -13,7 +13,7 @@ from spotify_developer_application import (spotify_client_id,
 get_current_users_playlists = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotify_client_id,
                                                                         client_secret=spotify_client_secret,
                                                                         redirect_uri=spotify_redirect_uri,
-                                                                        # Scopes required for obtaining current user's profile can be found here: https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
+                                                                        # Scopes required for obtaining current user's playlists can be found here: https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
                                                                         scope="playlist-read-private"))
 
 # Create variable to store data from current_user_playlist method of spotipy
