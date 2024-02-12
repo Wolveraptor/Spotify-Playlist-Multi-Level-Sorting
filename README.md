@@ -4,8 +4,8 @@ Spotify playlist multi-level sorting.
 ## About This Repository
 This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API and [spotipy](https://github.com/spotipy-dev/spotipy) library.
 
-### Execution
-THIS IS NOT READY FOR PRODUCTION!
+### Additional Information
+The python package `spotipy` is required for execution.
 
 This will sort a Spotify playlist in the following multi-level order:
 * artist
@@ -16,11 +16,16 @@ This will sort a Spotify playlist in the following multi-level order:
 
 The spotify credentials are stored in a file that is not configured to be uploaded to GitHub as it contains my Client ID and Client Secret.
 
-If you wish to use this, upon cloning this repository you will need to create a file called `spotify_developer_application.py` that contains three variables:
-* `spotify_client_id`
-* `spotify_client_secret`
-* `spotify_redirect_uri`
-
-The values for `spotify_client_id`, `spotify_client_secret`, and `spotify_redirect_uri` can be gathered from the Spotify developer dashboard after you create an application.
-
-To create an application follow the steps outlined under "Create an app" [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
+### Execution
+1. Create a Spotify application in the Spotify Developer Dashboard.
+    * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
+    * Use `https://localhost/` for the Redirect URI.
+2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
+3. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
+4. Edit the following lines:
+    * `spotify_application_client_id = "Client ID from Spotify Developer Dashboard"`
+        * Replace `Client ID from Spotify Developer Dashboard` with the client ID from the Spotify developer dashboard.
+    * `spotify_application_client_secret = "Client Secret from Spotify Developer Dashboard"`
+        * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
+    * `spotify_application_redirect_uri = "https://localhost/"`
+5. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
