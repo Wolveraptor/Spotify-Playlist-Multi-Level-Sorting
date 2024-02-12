@@ -74,7 +74,7 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
         # tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
         # Update tracks_data_dictionary with key:value pair.
         # The below line is for album artist sorting.
-        tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
+        tracks_data_dictionary.update({"album_artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
         # Update tracks_data_dictionary with key:value pair.
         tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
         # Update tracks_data_dictionary with key:value pair.
@@ -103,7 +103,7 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
             # tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
             # Update tracks_data_dictionary with key:value pair.
             # The below line is for album artist sorting.
-            tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
+            tracks_data_dictionary.update({"album_artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
             # Update tracks_data_dictionary with key:value pair.
             tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
             # Update tracks_data_dictionary with key:value pair.
@@ -120,12 +120,12 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
             tracks_list.append(tracks_data_dictionary)
 
     # Sort list of dictionaries by multiple keys.
-    # Sorting is performed by artist, release_date, album, disc_number, and then track_number
+    # Sorting is performed by album_artist, release_date, album, disc_number, and then track_number
     # The casefold() method returns all characters as lowercase.
     # If this is not performed, uppercase and lowercase characters will be sorted separately even if they are the same character.
     # By default, sorting is performed in ASCIIbetical order which puts uppercase letters before lowercase letters.
     tracks_list = sorted(tracks_list,
-                         key=lambda track:(track["artist"].casefold(),
+                         key=lambda track:(track["album_artist"].casefold(),
                                            track["release_date"].casefold(),
                                            track["album"].casefold(),
                                            track["disc_number"],
