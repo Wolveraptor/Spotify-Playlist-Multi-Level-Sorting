@@ -70,7 +70,11 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
         # Create empty dictionary to store data about each track.
         tracks_data_dictionary = {}
         # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
+        # The below line is for track artist sorting.
+        # tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
+        # Update tracks_data_dictionary with key:value pair.
+        # The below line is for album artist sorting.
+        tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
         # Update tracks_data_dictionary with key:value pair.
         tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
         # Update tracks_data_dictionary with key:value pair.
