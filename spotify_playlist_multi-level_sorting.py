@@ -90,7 +90,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
 # Create function to sort current user's selected playlist.
 def sort_current_users_playlist(spotify_authorization, playlist_id):
     # Create variable to store data from playlist_items method of spotipy
-    get_playlist_items_data = spotify_authorization.playlist_items(playlist_id,
+    get_playlist_items_data = spotify_authorization.playlist_items(playlist_id=playlist_id,
                                                                    offset=0,
                                                                    additional_types=['track'])
                 
@@ -191,13 +191,13 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
 
     # Create loop to iterate through ids lists to delete all tracks in the playlist.
     for ids_list in range(len(ids_list_of_lists)):
-        spotify_authorization.playlist_remove_all_occurrences_of_items(playlist_id,
-                                                                    items=ids_list_of_lists[ids_list])
+        spotify_authorization.playlist_remove_all_occurrences_of_items(playlist_id=playlist_id,
+                                                                       items=ids_list_of_lists[ids_list])
 
     # Create loop to iterate through ids lists to add tracks to the playlist.
     for ids_list in range(len(ids_list_of_lists)):
-            spotify_authorization.playlist_add_items(playlist_id,
-                                                ids_list_of_lists[ids_list])
+            spotify_authorization.playlist_add_items(playlist_id=playlist_id,
+                                                     items=ids_list_of_lists[ids_list])
     
     # Print update to console.
     print(f"Playlist with id {playlist_id} has been sorted.")
