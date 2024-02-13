@@ -19,6 +19,8 @@ This will sort a Spotify playlist in the following multi-level order:
 The spotify credentials are stored in a file that is not configured to be uploaded to GitHub as it contains my Client ID and Client Secret.
 
 ### Execution
+Prior to running this on your playlist, make a copy of it and test this on the copy.
+
 1. Create a Spotify application in the Spotify Developer Dashboard.
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
     * Use `https://localhost/` for the Redirect URI.
