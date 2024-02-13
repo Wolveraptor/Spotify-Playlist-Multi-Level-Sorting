@@ -64,15 +64,15 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
             # This dictionary will be the value of the key which is the playlist.
             playlists_data_dictionary = {}
             # Update playlists_data_dictionary with key:value pair.
-            playlists_data_dictionary.update({"name":get_current_users_playlists_data["items"][playlists]["name"]})
+            playlists_data_dictionary.update({"playlist_name":get_current_users_playlists_data["items"][playlists]["name"]})
             # Update playlists_data_dictionary with key:value pair.
-            playlists_data_dictionary.update({"id":get_current_users_playlists_data["items"][playlists]["id"]})
+            playlists_data_dictionary.update({"playlist_id":get_current_users_playlists_data["items"][playlists]["id"]})
             # Update playlists_data_dictionary with key:value pair.
-            playlists_data_dictionary.update({"tracks":get_current_users_playlists_data["items"][playlists]["tracks"]["total"]})
+            playlists_data_dictionary.update({"playlist_tracks_total":get_current_users_playlists_data["items"][playlists]["tracks"]["total"]})
             # Update playlists_data_dictionary with key:value pair.
-            playlists_data_dictionary.update({"owner":get_current_users_playlists_data["items"][playlists]["owner"]["display_name"]})
+            playlists_data_dictionary.update({"playlist_owner":get_current_users_playlists_data["items"][playlists]["owner"]["display_name"]})
             # Update playlists_data_dictionary with key:value pair.
-            playlists_data_dictionary.update({"owner_id":get_current_users_playlists_data["items"][playlists]["owner"]["id"]})
+            playlists_data_dictionary.update({"playlist_owner_id":get_current_users_playlists_data["items"][playlists]["owner"]["id"]})
             # Append playlists_data_dictionary to playlists_list
             playlists_list.append(playlists_data_dictionary)
         else:
@@ -82,7 +82,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
     print(json.dumps(playlists_list, indent=4, sort_keys=False))
 
     # Request user input to paste playlist ID to be sorted.
-    playlist_id = input('Please copy and paste the playlist "id" to be sorted: ')
+    playlist_id = input('Please copy and paste the "playlist_id" to be sorted: ')
 
     # Return the value of playlist_id
     return playlist_id
