@@ -22,8 +22,35 @@ def connect_to_spotify_api(application_client_id, application_client_secret, app
     # Return the value of spotify_authorization
     return spotify_authorization
 
+# Create function to get current user's profile information.
+def get_current_users_profile(spotify_authorization):
+    # Create variable to store data from current_user() method of spotipy
+    get_current_users_profile_data = spotify_authorization.current_user()
+
+    # Create empty dictionary to store current user's profile information.
+    current_users_profile_information_dictionary = {}
+
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"display_name":get_current_users_profile_data["display_name"]})
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"email":get_current_users_profile_data["email"]})
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"id":get_current_users_profile_data["id"]})
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"country":get_current_users_profile_data["country"]})
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"type":get_current_users_profile_data["type"]})
+    # Update current_users_profile_information with key:value pair.
+    current_users_profile_information_dictionary.update({"product":get_current_users_profile_data["product"]})
+
+    # Print current user's profile information in console.
+    # print(json.dumps(current_users_profile_information_dictionary, indent=4, sort_keys=False))
+    
+    # Return the value of id
+    return current_users_profile_information_dictionary["id"]
+
 # Create function to get current user's playlists information.
-def get_current_users_playlists(spotify_authorization):
+def get_current_users_playlists(spotify_authorization, current_users_profile_id):
     # Create variable to store data from current_user_playlist method of spotipy
     get_current_users_playlists_data = spotify_authorization.current_user_playlists()
 
@@ -32,19 +59,24 @@ def get_current_users_playlists(spotify_authorization):
 
     # Create loop to iterate through playlists.
     for playlists in range(len(get_current_users_playlists_data["items"])):
-        # Create empty dictionary to store data about each playlist.
-        # This dictionary will be the value of the key which is the playlist.
-        playlists_data_dictionary = {}
-        # Update playlists_data_dictionary with key:value pair.
-        playlists_data_dictionary.update({"name":get_current_users_playlists_data["items"][playlists]["name"]})
-        # Update playlists_data_dictionary with key:value pair.
-        playlists_data_dictionary.update({"owner":get_current_users_playlists_data["items"][playlists]["owner"]["display_name"]})
-        # Update playlists_data_dictionary with key:value pair.
-        playlists_data_dictionary.update({"id":get_current_users_playlists_data["items"][playlists]["id"]})
-        # Update playlists_data_dictionary with key:value pair.
-        playlists_data_dictionary.update({"tracks":get_current_users_playlists_data["items"][playlists]["tracks"]["total"]})
-        # Append playlists_data_dictionary to playlists_list
-        playlists_list.append(playlists_data_dictionary)
+        if get_current_users_playlists_data["items"][playlists]["owner"]["id"] == current_users_profile_id:
+            # Create empty dictionary to store data about each playlist.
+            # This dictionary will be the value of the key which is the playlist.
+            playlists_data_dictionary = {}
+            # Update playlists_data_dictionary with key:value pair.
+            playlists_data_dictionary.update({"name":get_current_users_playlists_data["items"][playlists]["name"]})
+            # Update playlists_data_dictionary with key:value pair.
+            playlists_data_dictionary.update({"id":get_current_users_playlists_data["items"][playlists]["id"]})
+            # Update playlists_data_dictionary with key:value pair.
+            playlists_data_dictionary.update({"tracks":get_current_users_playlists_data["items"][playlists]["tracks"]["total"]})
+            # Update playlists_data_dictionary with key:value pair.
+            playlists_data_dictionary.update({"owner":get_current_users_playlists_data["items"][playlists]["owner"]["display_name"]})
+            # Update playlists_data_dictionary with key:value pair.
+            playlists_data_dictionary.update({"owner_id":get_current_users_playlists_data["items"][playlists]["owner"]["id"]})
+            # Append playlists_data_dictionary to playlists_list
+            playlists_list.append(playlists_data_dictionary)
+        else:
+            pass
 
     # Print current users's playlists in console
     print(json.dumps(playlists_list, indent=4, sort_keys=False))
@@ -171,5 +203,12 @@ def reorder_current_users_playlist(spotify_authorization, playlist_id):
     print(f"Playlist with id {playlist_id} has been sorted.")
 
 # Execute function to reorder current user's selected playlist.
-reorder_current_users_playlist(connect_to_spotify_api(spotify_application_client_id, spotify_application_client_secret, spotify_application_redirect_uri),
-                               get_current_users_playlists(connect_to_spotify_api(spotify_application_client_id, spotify_application_client_secret, spotify_application_redirect_uri)))
+reorder_current_users_playlist(connect_to_spotify_api(spotify_application_client_id,
+                                                      spotify_application_client_secret,
+                                                      spotify_application_redirect_uri),
+                               get_current_users_playlists(connect_to_spotify_api(spotify_application_client_id,
+                                                                                  spotify_application_client_secret,
+                                                                                  spotify_application_redirect_uri),
+                                                            get_current_users_profile(connect_to_spotify_api(spotify_application_client_id,
+                                                                                                             spotify_application_client_secret,
+                                                                                                             spotify_application_redirect_uri))))
