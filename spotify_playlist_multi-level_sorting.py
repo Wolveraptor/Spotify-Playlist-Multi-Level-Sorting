@@ -209,8 +209,6 @@ function_connect_to_spotify_api = connect_to_spotify_api(spotify_application_cli
 function_get_current_users_profile = get_current_users_profile(function_connect_to_spotify_api)
 # Assign get_current_users_playlists function with arguments to variable function_get_current_users_playlists
 function_get_curret_users_playlists = get_current_users_playlists(function_connect_to_spotify_api, function_get_current_users_profile)
-# Assign sort_current_users_playlist with arguments to variable function_sort_current_users_playlist
-function_sort_current_users_playlist = sort_current_users_playlist(function_connect_to_spotify_api, function_get_curret_users_playlists)
 
 # Functions are assigned to variables to improve code reuseability and readability.
 # Original:
@@ -224,8 +222,7 @@ function_sort_current_users_playlist = sort_current_users_playlist(function_conn
 #                                                                                                              spotify_application_client_secret,
 #                                                                                                              spotify_application_redirect_uri))))
 # New:
-# function_sort_current_users_playlist
+# sort_current_users_playlist(function_connect_to_spotify_api, function_get_curret_users_playlists)
 
-# Execute function_sort_current_users_playlist
-# This executes the sort_current_users_playlist function.
-function_sort_current_users_playlist
+# Execute sort_current_users_playlist
+sort_current_users_playlist(function_connect_to_spotify_api, function_get_curret_users_playlists)
