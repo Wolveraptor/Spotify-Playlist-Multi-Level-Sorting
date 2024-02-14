@@ -21,6 +21,8 @@ The spotify credentials are stored in a file that is not configured to be upload
 ### Execution
 Prior to running this on your playlist, make a copy of it and test this on the copy.
 
+This has been tested on a playlist containing 1,555 items.
+
 1. Create a Spotify application in the Spotify Developer Dashboard.
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
     * Use `https://localhost/` for the Redirect URI.
