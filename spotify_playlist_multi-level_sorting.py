@@ -53,7 +53,7 @@ def get_current_users_profile(spotify_authorization):
 # Create function to get current user's playlists information.
 def get_current_users_playlists(spotify_authorization, current_users_profile_id):
     # Create variable to store data from current_user_playlist method of spotipy
-    get_current_users_playlists_data = spotify_authorization.current_user_playlists()
+    get_current_users_playlists_data = spotify_authorization.current_user_playlists(limit=50)
 
     # Create empty list to store dictionaries.
     playlists_list = []
@@ -92,6 +92,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
 def sort_current_users_playlist(spotify_authorization, playlist_id):
     # Create variable to store data from playlist_items method of spotipy
     get_playlist_items_data = spotify_authorization.playlist_items(playlist_id=playlist_id,
+                                                                   limit=100,
                                                                    offset=0,
                                                                    additional_types=['track'])
                 
