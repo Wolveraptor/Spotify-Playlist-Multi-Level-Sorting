@@ -31,7 +31,7 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
 2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
 3. Navigate to the cloned repository via CLI and run `python3 -m pip install -r requirements.txt`
 4. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
-5. Edit the following lines:
+5. Edit the following lines in `spotify_developer_application_template.py`:
     * `spotify_application_client_id = "Client ID from Spotify Developer Dashboard"`
         * Replace `Client ID from Spotify Developer Dashboard` with the client ID from the Spotify developer dashboard.
         * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
