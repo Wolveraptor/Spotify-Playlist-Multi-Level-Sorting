@@ -9,8 +9,6 @@ Requirements were gathered via: `python3 -m pip freeze > requirements.txt`
 ### Additional Information
 This cannot sort playlists that contain local files.
 
-The python package `spotipy` is required for execution.
-
 This will sort a Spotify playlist in the following multi-level order:
 * album_artist
 * release_date
