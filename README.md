@@ -38,7 +38,4 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * `spotify_application_client_secret = "Client Secret from Spotify Developer Dashboard"`
         * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
         * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
-    * `spotify_application_redirect_uri = "https://localhost/"`
-6. Install the `spotipy` Python package.
-    * Installation instructions can be found [here](https://pypi.org/project/spotipy/).
-7. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
+6. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
