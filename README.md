@@ -25,7 +25,7 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
 
 1. Create a Spotify application in the Spotify Developer Dashboard.
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
-    * Use `https://localhost/` for the Redirect URI.
+    * Use `http://localhost:3000/` for the Redirect URI.
 2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
 3. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
 4. Edit the following lines:
