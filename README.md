@@ -29,8 +29,9 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
     * Use `http://localhost:3000/` for the Redirect URI.
 2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
-3. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
-4. Edit the following lines:
+3. Navigate to the cloned repository via CLI and run `python3 -m pip install -r requirements.txt`
+4. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
+5. Edit the following lines:
     * `spotify_application_client_id = "Client ID from Spotify Developer Dashboard"`
         * Replace `Client ID from Spotify Developer Dashboard` with the client ID from the Spotify developer dashboard.
         * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
@@ -38,6 +39,6 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
         * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
         * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
     * `spotify_application_redirect_uri = "https://localhost/"`
-5. Install the `spotipy` Python package.
+6. Install the `spotipy` Python package.
     * Installation instructions can be found [here](https://pypi.org/project/spotipy/).
-6. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
+7. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
