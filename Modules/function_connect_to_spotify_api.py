@@ -16,3 +16,7 @@ def connect_to_spotify_api(application_client_id, application_client_secret, app
     
     # Return the value of spotify_authorization
     return spotify_authorization
+
+# Create __name__ == "__main__" idiom.
+if __name__ == "__main__":
+    print('This file cannot be executed as a script.\n\nExecute "spotify_playlist_mulit-level_sorting.py" to sort playlist.')

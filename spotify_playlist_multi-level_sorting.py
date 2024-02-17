@@ -13,12 +13,14 @@ from Modules.function_get_current_users_playlists import get_current_users_playl
 # Import sort_current_users_playlist function.
 from Modules.function_sort_current_users_playlist import sort_current_users_playlist
 
-# Assign connect_to_spotify function with arguments to variable function_connect_to_spotify_api
-function_connect_to_spotify_api = connect_to_spotify_api(spotify_application_client_id, spotify_application_client_secret, spotify_application_redirect_uri)
-# Assign get_current_users-profile function with argument to variable function_get_current_users_profile
-function_get_current_users_profile = get_current_users_profile(function_connect_to_spotify_api)
-# Assign get_current_users_playlists function with arguments to variable function_get_current_users_playlists
-function_get_current_users_playlists = get_current_users_playlists(function_connect_to_spotify_api, function_get_current_users_profile)
+# Create __name__ == "__main__" idiom.
+if __name__ == "__main__":
+    # Assign connect_to_spotify function with arguments to variable function_connect_to_spotify_api
+    function_connect_to_spotify_api = connect_to_spotify_api(spotify_application_client_id, spotify_application_client_secret, spotify_application_redirect_uri)
+    # Assign get_current_users-profile function with argument to variable function_get_current_users_profile
+    function_get_current_users_profile = get_current_users_profile(function_connect_to_spotify_api)
+    # Assign get_current_users_playlists function with arguments to variable function_get_current_users_playlists
+    function_get_current_users_playlists = get_current_users_playlists(function_connect_to_spotify_api, function_get_current_users_profile)
 
-# Execute sort_current_users_playlist
-sort_current_users_playlist(function_connect_to_spotify_api, function_get_current_users_playlists)
+    # Execute sort_current_users_playlist
+    sort_current_users_playlist(function_connect_to_spotify_api, function_get_current_users_playlists)

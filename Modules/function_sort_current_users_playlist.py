@@ -117,3 +117,7 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
     
     # Print update to console.
     print(f"Playlist with id {playlist_id} has been sorted.")
+
+# Create __name__ == "__main__" idiom.
+if __name__ == "__main__":
+    print('This file cannot be executed as a script.\n\nExecute "spotify_playlist_mulit-level_sorting.py" to sort playlist.')

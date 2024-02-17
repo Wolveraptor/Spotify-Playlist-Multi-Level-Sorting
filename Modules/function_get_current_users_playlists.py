@@ -14,6 +14,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
 
     # Create loop to iterate through playlists.
     for playlists in range(len(get_current_users_playlists_data["items"])):
+        # If the playlist owner id equals the current user's profile id.
         if get_current_users_playlists_data["items"][playlists]["owner"]["id"] == current_users_profile_id:
             # Create empty dictionary to store data about each playlist.
             # This dictionary will be the value of the key which is the playlist.
@@ -30,6 +31,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
             playlists_data_dictionary.update({"playlist_owner_id":get_current_users_playlists_data["items"][playlists]["owner"]["id"]})
             # Append playlists_data_dictionary to playlists_list
             playlists_list.append(playlists_data_dictionary)
+        # If the playlist owner id does not equal the current user's profile id.
         else:
             pass
 
@@ -41,3 +43,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
 
     # Return the value of playlist_id
     return playlist_id
+
+# Create __name__ == "__main__" idiom.
+if __name__ == "__main__":
+    print('This file cannot be executed as a script.\n\nExecute "spotify_playlist_mulit-level_sorting.py" to sort playlist.')

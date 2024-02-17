@@ -30,3 +30,7 @@ def get_current_users_profile(spotify_authorization):
     
     # Return the value of id
     return current_users_profile_information_dictionary["id"]
+
+# Create __name__ == "__main__" idiom.
+if __name__ == "__main__":
+    print('This file cannot be executed as a script.\n\nExecute "spotify_playlist_mulit-level_sorting.py" to sort playlist.')
