@@ -26,12 +26,11 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * Use `http://localhost:3000/` for the Redirect URI.
 2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
 3. Navigate to the cloned repository via CLI and run `python3 -m pip install -r requirements.txt`
-4. Rename the file `spotify_developer_application_template.py` to `spotify_developer_application.py` in the cloned repository.
-5. Edit the following lines in `spotify_developer_application_template.py`:
-    * `spotify_application_client_id = "Client ID from Spotify Developer Dashboard"`
-        * Replace `Client ID from Spotify Developer Dashboard` with the client ID from the Spotify developer dashboard.
-        * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
-    * `spotify_application_client_secret = "Client Secret from Spotify Developer Dashboard"`
-        * Replace `Client Secret from Spotify Developer Dashboard"` with the client secret from the Spotify developer dashboard.
-        * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
-6. Execute the `spotify_playlist_multi-level_sorting.py` file and follow the on-screen prompts.
+4. Execute `spotify_playlist_multi-level_sorting.py` and supply the `Client ID` from the Spotify Developer Dashboard and the `Client Secret` from the Spotify Developer Dashboard.
+    * Client ID:
+    * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
+    * Client Secret:
+    * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
+    * `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`
+        * To view example usage and the optional argument execute: `python3 spotify_playlist_multi-level_sorting.py -h` or `python3 spotify_playlist_multi-level_sorting.py --help`
+5. Follow the on-screen prompts.
