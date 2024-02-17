@@ -3,6 +3,7 @@
 from spotify_developer_application import (spotify_application_client_id,
                                            spotify_application_client_secret,
                                            spotify_application_redirect_uri)
+
 # Import connect_to_spotify_api function.
 from Modules.function_connect_to_spotify_api import connect_to_spotify_api
 # Import get_current_users_profile function.
