@@ -34,6 +34,7 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`
 5. Follow the on-screen prompts.
 
+### Notes
 * To view example usage and the optional argument execute: `python3 spotify_playlist_multi-level_sorting.py -h` or `python3 spotify_playlist_multi-level_sorting.py --help`
     * ![alttext](/Images/spotify_playlist_multi-level_sorting.py_help.png)
 * `0123456789` and `9876543210` are examples of `Client ID` and `Client Secret` respectively. Do not use these values as they will not work. You must enter the `Client ID` and `Client Secret` as they appear in the Spotify Developer Dashboard.
