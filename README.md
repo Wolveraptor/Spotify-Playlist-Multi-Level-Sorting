@@ -14,8 +14,6 @@ This will sort a Spotify playlist in the following multi-level order:
 * disc_number
 * track_number
 
-The spotify credentials are stored in a file that is not configured to be uploaded to GitHub as it contains my Client ID and Client Secret.
-
 ### Execution
 Prior to running this on your playlist, make a copy of it and test this on the copy.
 
