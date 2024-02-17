@@ -4,8 +4,6 @@ Spotify playlist multi-level sorting.
 ## About This Repository
 This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API and [spotipy](https://github.com/spotipy-dev/spotipy) library.
 
-Requirements were gathered via: `python3 -m pip freeze > requirements.txt`
-
 ### Additional Information
 This cannot sort playlists that contain local files.
 
