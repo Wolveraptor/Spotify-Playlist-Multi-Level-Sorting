@@ -1,6 +1,7 @@
 # Import required modules.
 # spotipy is used for interacting with the Spotify API.
 import spotipy
+# Import SpotifyOAuth for Client Authorization Code Flow.
 from spotipy.oauth2 import SpotifyOAuth
 
 # Create function to connect to the Spotify API.
