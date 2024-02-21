@@ -17,41 +17,28 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
     for tracks in range(len(get_playlist_items_data["items"])):
         # Create empty dictionary to store data about each track.
         tracks_data_dictionary = {}
-        # Update tracks_data_dictionary with key:value pair.
-        # The below line is for track artist sorting.
-        # tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
-        # Update tracks_data_dictionary with key:value pair.
-        # The below line is for album artist sorting.
-        tracks_data_dictionary.update({"album_artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
-        # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
-        # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"release_date":get_playlist_items_data["items"][tracks]["track"]["album"]["release_date"]})
-        # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"track":get_playlist_items_data["items"][tracks]["track"]["name"]})
-        # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"track_number":get_playlist_items_data["items"][tracks]["track"]["track_number"]})
-        # Update tracks_data_dictionary with key:value pair.
-        tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
-        # Update tracks_data__dictionary with key:value pair.
-        tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
-        # Append playlists_data_dictionary to tracks_list
-        tracks_list.append(tracks_data_dictionary)
-
-    # Create while loop to look for next set of paginated results.
-    while get_playlist_items_data["next"]:
-        # Set variable get_playlist_items_data value to the next set of paginated results.
-        get_playlist_items_data = spotify_authorization.next(get_playlist_items_data)
-        # Create loop to iterate through playlist tracks.
-        for tracks in range(len(get_playlist_items_data["items"])):
-            # Create empty dictionary to store data about each track.
-            tracks_data_dictionary = {}
+        # Check if "Various Artists" is the album_artis.
+        # If it is, track artist will be used for sorting.
+        if get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"] == "Various Artists":
             # Update tracks_data_dictionary with key:value pair.
-            # The below line is for track artist sorting.
-            # tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
+            tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
             # Update tracks_data_dictionary with key:value pair.
-            # The below line is for album artist sorting.
-            tracks_data_dictionary.update({"album_artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
+            tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
+            # Update tracks_data_dictionary with key:value pair.
+            tracks_data_dictionary.update({"release_date":get_playlist_items_data["items"][tracks]["track"]["album"]["release_date"]})
+            # Update tracks_data_dictionary with key:value pair.
+            tracks_data_dictionary.update({"track":get_playlist_items_data["items"][tracks]["track"]["name"]})
+            # Update tracks_data_dictionary with key:value pair.
+            tracks_data_dictionary.update({"track_number":get_playlist_items_data["items"][tracks]["track"]["track_number"]})
+            # Update tracks_data_dictionary with key:value pair.
+            tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
+            # Update tracks_data__dictionary with key:value pair.
+            tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
+            # Append playlists_data_dictionary to tracks_list
+            tracks_list.append(tracks_data_dictionary)
+        elif get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"] != "Various Artists":
+            # Update tracks_data_dictionary with key:value pair.
+            tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
             # Update tracks_data_dictionary with key:value pair.
             tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
             # Update tracks_data_dictionary with key:value pair.
@@ -67,13 +54,58 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
             # Append playlists_data_dictionary to tracks_list
             tracks_list.append(tracks_data_dictionary)
 
+    # Create while loop to look for next set of paginated results.
+    while get_playlist_items_data["next"]:
+        # Set variable get_playlist_items_data value to the next set of paginated results.
+        get_playlist_items_data = spotify_authorization.next(get_playlist_items_data)
+        # Create loop to iterate through playlist tracks.
+        for tracks in range(len(get_playlist_items_data["items"])):
+            # Create empty dictionary to store data about each track.
+            tracks_data_dictionary = {}
+            # Check if "Various Artists" is the album_artis.
+            # If it is, track artist will be used for sorting.
+            if get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"] == "Various Artists":
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["artists"][0]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"release_date":get_playlist_items_data["items"][tracks]["track"]["album"]["release_date"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"track":get_playlist_items_data["items"][tracks]["track"]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"track_number":get_playlist_items_data["items"][tracks]["track"]["track_number"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
+                # Update tracks_data__dictionary with key:value pair.
+                tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
+                # Append playlists_data_dictionary to tracks_list
+                tracks_list.append(tracks_data_dictionary)
+            elif get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"] != "Various Artists":
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"artist":get_playlist_items_data["items"][tracks]["track"]["album"]["artists"][0]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"album":get_playlist_items_data["items"][tracks]["track"]["album"]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"release_date":get_playlist_items_data["items"][tracks]["track"]["album"]["release_date"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"track":get_playlist_items_data["items"][tracks]["track"]["name"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"track_number":get_playlist_items_data["items"][tracks]["track"]["track_number"]})
+                # Update tracks_data_dictionary with key:value pair.
+                tracks_data_dictionary.update({"disc_number":get_playlist_items_data["items"][tracks]["track"]["disc_number"]})
+                # Update tracks_data__dictionary with key:value pair.
+                tracks_data_dictionary.update({"id":get_playlist_items_data["items"][tracks]["track"]["id"]})
+                # Append playlists_data_dictionary to tracks_list
+                tracks_list.append(tracks_data_dictionary)
+
     # Sort list of dictionaries by multiple keys.
     # Sorting is performed by album_artist, release_date, album, disc_number, and then track_number
     # The casefold() method returns all characters as lowercase.
     # If this is not performed, uppercase and lowercase characters will be sorted separately even if they are the same character.
     # By default, sorting is performed in ASCIIbetical order which puts uppercase letters before lowercase letters.
     tracks_list = sorted(tracks_list,
-                         key=lambda track:(track["album_artist"].casefold(),
+                         key=lambda track:(track["artist"].casefold(),
                                            track["release_date"].casefold(),
                                            track["album"].casefold(),
                                            track["disc_number"],
