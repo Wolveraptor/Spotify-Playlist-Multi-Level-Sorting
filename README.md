@@ -8,7 +8,7 @@ This is my repository for my project of creating a way to perform multi-level so
 This cannot sort playlists that contain local files.
 
 This will sort a Spotify playlist in the following multi-level order:
-* album_artist
+* artist
 * release_date
 * album
 * disc_number
