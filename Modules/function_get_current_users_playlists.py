@@ -35,14 +35,23 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
         else:
             pass
 
-    # Print current users's playlists in console
-    print(json.dumps(playlists_list, indent=4, sort_keys=False))
-
-    # Request user input to paste playlist ID to be sorted.
-    playlist_id = input('Please copy and paste the "playlist_id" to be sorted: ')
-
-    # Return the value of playlist_id
-    return playlist_id
+    # Create variable to store chosen playlist's id.
+    while True:
+        # Create loop to print playlists for selection
+        for playlist in range(len(playlists_list)):
+            playlist_name = playlists_list[playlist]["playlist_name"]
+            print(f"{playlist} - {playlist_name}")
+        try:
+            # Request user input to paste playlist ID to be sorted.
+            # playlist_to_be_sorted must be treated as an integer because this iterates through a list of dictionaries.
+            playlist_to_be_sorted = int(input('Please enter the number to the left of the playlist to be sorted: '))
+            playlist_id = playlists_list[playlist_to_be_sorted]["playlist_id"]
+            # Return the value of playlist_id
+            return playlist_id
+        except ValueError:
+            print("Enter an integer.")
+        except IndexError:
+            print("Invalid playlist number entered.")
 
 # Create __name__ == "__main__" idiom.
 if __name__ == "__main__":
