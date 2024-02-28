@@ -46,6 +46,8 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
             # playlist_to_be_sorted must be treated as an integer because this iterates through a list of dictionaries.
             playlist_to_be_sorted = int(input('Please enter the number to the left of the playlist to be sorted: '))
             playlist_id = playlists_list[playlist_to_be_sorted]["playlist_id"]
+            # Print playlist id to console.
+            # print(playlist_id)
             # Return the value of playlist_id
             return playlist_id
         # Create error handling if an integer is not entered.
