@@ -48,8 +48,10 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
             playlist_id = playlists_list[playlist_to_be_sorted]["playlist_id"]
             # Return the value of playlist_id
             return playlist_id
+        # Create error handling if an integer is not entered.
         except ValueError:
             print("Enter an integer.")
+        # Create error handling if an integer is entered but it does not correspond to a playlist.
         except IndexError:
             print("Invalid playlist number entered.")
 
