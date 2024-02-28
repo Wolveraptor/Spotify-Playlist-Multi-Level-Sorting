@@ -148,7 +148,7 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
                                                      items=ids_list_of_lists[ids_list])
     
     # Print update to console.
-    print(f"Playlist with id {playlist_id} has been sorted.")
+    print(f"Playlist has been sorted.")
 
 # Create __name__ == "__main__" idiom.
 if __name__ == "__main__":
