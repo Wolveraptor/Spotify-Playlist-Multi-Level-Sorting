@@ -35,7 +35,7 @@ def get_current_users_playlists(spotify_authorization, current_users_profile_id)
         else:
             pass
 
-    # Create variable to store chosen playlist's id.
+    # Create variable to store chosen playlist's ID.
     while True:
         # Create loop to print playlists for selection
         for playlist in range(len(playlists_list)):
