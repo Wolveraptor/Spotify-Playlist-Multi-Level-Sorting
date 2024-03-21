@@ -23,15 +23,29 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
     * Use `http://localhost:3000/` for the Redirect URI.
 2. Clone the repository with `git clone https://github.com/Wolveraptor/Spotify-Playlist-Multi-Level-Sorting.git`
-3. Navigate to the cloned repository via CLI and run `python3 -m pip install -r requirements.txt`
-4. Execute `spotify_playlist_multi-level_sorting.py` and supply the `Client ID` from the Spotify Developer Dashboard and the `Client Secret` from the Spotify Developer Dashboard.
+3. Navigate to the cloned repository via CLI.
+    * For Windows use `Command Prompt`.
+    * For Linux and MacOS use `Terminal`
+4. Create a virtual environment.
+    * For Windows use `py -m venv spmls`.
+    * For Linux and MacOS use `python3 -m venv spmls`.
+5. Activate the virtual environment.
+    * For Windows user `spmls\Scripts\activate.bat`.
+    * For Linux and MacOS use `source spmls/bin/activate`.
+6. Install required dependencies.
+    * For Windows use `py -m pip install -r requirements.txt`.
+    * For Linux and MacOS use `python3 -m pip install -r requirements.txt`.
+7. Execute `spotify_playlist_multi-level_sorting.py` and supply the `Client ID` from the Spotify Developer Dashboard and the `Client Secret` from the Spotify Developer Dashboard.
     * Client ID:
     * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
     * Client Secret:
     * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
     * Windows: `py spotify_playlist_multi-level_sorting.py 0123456789 9876543210`
-    * MacOS and Ubuntu: `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`
-5. Follow the on-screen prompts.
+    * Linux and MacOS: `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`
+8. Follow the on-screen prompts.
+9. Deactivate the virtual environment.
+    * For Windows use `spmls\Scripts\deactivate.bat`.
+    * For Linux and MacOS use `deactivate`
 
 ### Notes
 * To view example usage and the optional argument execute:
