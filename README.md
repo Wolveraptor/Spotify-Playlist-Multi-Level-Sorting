@@ -29,6 +29,8 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
 4. Create a virtual environment.
     * For Windows use `py -m venv spmls`.
     * For Linux and MacOS use `python3 -m venv spmls`.
+        * On Debian/Ubuntu systems, you may need to install the `python3-venv` package.
+            * Example: `sudo apt install python3.12-venv`
 5. Activate the virtual environment.
     * For Windows user `spmls\Scripts\activate.bat`.
     * For Linux and MacOS use `source spmls/bin/activate`.
