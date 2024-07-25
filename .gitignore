@@ -161,3 +161,6 @@ cython_debug/
 
 # spmls virtual environment
 spmls
+
+# spmls.bat Batch file
+spmls.bat
