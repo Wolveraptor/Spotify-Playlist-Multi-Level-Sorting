@@ -164,3 +164,6 @@ spmls
 
 # spmls.bat Batch file
 spmls.bat
+
+# spmls.ps1 PowerShell Script file
+spmls.ps1
