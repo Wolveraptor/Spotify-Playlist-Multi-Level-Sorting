@@ -1,4 +1,7 @@
+python.exe -m venv spmls && ^
 spmls\Scripts\activate.bat && ^
-py -m pip install -r requirements.txt && ^
-py spotify_playlist_multi-level_sorting.py <Spotify Client ID> <Spotify Client Secret> && ^
-spmls\Scripts\deactivate.bat
+python.exe -m pip install --upgrade pip && ^
+python.exe -m pip install -r requirements.txt && ^
+py spotify_playlist_multi-level_sorting.py Spotify_Client_ID Spotify_Client_Secret && ^
+spmls\Scripts\deactivate.bat && ^
+rmdir spmls /s /q
