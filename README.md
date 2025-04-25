@@ -1,24 +1,29 @@
+<!-- omit from toc -->
 # Spotify Playlist Multi-Level Sorting
-Spotify playlist multi-level sorting.
+* Spotify playlist multi-level sorting.
 
-## About This Repository
-This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API and [spotipy](https://github.com/spotipy-dev/spotipy) library.
+<!-- omit from toc -->
+## Spotify Playlist Multi-Level Sorting | About This Repository
+* This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API and [spotipy](https://github.com/spotipy-dev/spotipy) library.
 
-### Additional Information
-This cannot sort playlists that contain local files.
+<!-- omit from toc -->
+### Spotify Playlist Multi-Level Sorting | Table of Contents
+* [Spotify Playlist Multi-Level Sorting | Additional Information](#spotify-playlist-multi-level-sorting--additional-information)
+* [Spotify Playlist Multi-Level Sorting | Execution](#spotify-playlist-multi-level-sorting--execution)
+* [Spotify Playlist Multi-Level Sorting | Notes](#spotify-playlist-multi-level-sorting--notes)
 
-This will sort a Spotify playlist in the following multi-level order:
-* artist
-* release_date
-* album
-* disc_number
-* track_number
+#### Spotify Playlist Multi-Level Sorting | Additional Information
+* This cannot sort playlists that contain local files.
+* This will sort a Spotify playlist in the following multi-level order:
+    * artist
+    * release_date
+    * album
+    * disc_number
+    * track_number
 
-### Execution
-Prior to running this on your playlist, make a copy of it and test this on the copy.
-
-This has been tested on the following playlist: [Spotify Playlist Multi-Level Sorting](https://open.spotify.com/playlist/47l4vufg3gAoVbOpSedwO5?si=852f7ce6eaa849c8)
-
+#### Spotify Playlist Multi-Level Sorting | Execution
+* Prior to running this on your playlist, make a copy of it and test this on the copy.
+* This has been tested on the following playlist: [Spotify Playlist Multi-Level Sorting](https://open.spotify.com/playlist/47l4vufg3gAoVbOpSedwO5?si=852f7ce6eaa849c8)
 1. Create a Spotify application in the Spotify Developer Dashboard.
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
     * Use `http://localhost:3000/` for the Redirect URI.
@@ -54,7 +59,7 @@ This has been tested on the following playlist: [Spotify Playlist Multi-Level So
     * For Windows `PowerShell` use `deactivate`.
     * For Linux and MacOS use `deactivate`.
 
-### Notes
+#### Spotify Playlist Multi-Level Sorting | Notes
 * To view example usage and the optional argument execute:
     * Windows: `py spotify_playlist_multi-level_sorting.py -h` or `py spotify_playlist_multi-level_sorting.py --help`
     * MacOS and Ubuntu: `python3 spotify_playlist_multi-level_sorting.py -h` or `python3 spotify_playlist_multi-level_sorting.py --help`
