@@ -1,6 +1,6 @@
 <!-- omit from toc -->
 # Spotify Playlist Multi-Level Sorting
-* Spotify playlist multi-level sorting.
+* Spotify Playlist Multi-Level Sorting.
 
 <!-- omit from toc -->
 ## Spotify Playlist Multi-Level Sorting | About This Repository
