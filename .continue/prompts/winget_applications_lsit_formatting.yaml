@@ -1,0 +1,12 @@
+name: Winget - Applications List Formatting
+version: 0.0.1
+schema: v1
+prompts:
+  - name: Winget - Applications List Formatting
+    description: Used to prefix the parent bullet point with "Name:", enclose the parent text with "`" to show as inline code, premix the child bullet point with "ID:", and enclose the child text with "`" to show as inline code.
+    prompt: |
+      Please read the highlighted code and edit it so that:
+      - The first bullet point is prefixed with "Name:".
+      - The text following is enclosed with the ` character to show it as inline code.
+      - The second line is prefixed with "ID:".
+      - The text following is enclosed with the ` character to show it as inline code.
