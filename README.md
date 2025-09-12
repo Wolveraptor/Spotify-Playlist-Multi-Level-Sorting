@@ -1,93 +1,67 @@
+<!-- omit from toc -->
 # Spotify Playlist Multi-Level Sorting
+* Spotify Playlist Multi-Level Sorting.
 
+<!-- omit from toc -->
+## Spotify Playlist Multi-Level Sorting | About This Repository
+* This is my repository for my project of creating a way to perform multi-level sorting on Spotify playlists with Python via the Spotify web API and [spotipy](https://github.com/spotipy-dev/spotipy) library.
 
+<!-- omit from toc -->
+### Spotify Playlist Multi-Level Sorting | Table of Contents
+* [Spotify Playlist Multi-Level Sorting | Additional Information](#spotify-playlist-multi-level-sorting--additional-information)
+* [Spotify Playlist Multi-Level Sorting | Execution](#spotify-playlist-multi-level-sorting--execution)
+* [Spotify Playlist Multi-Level Sorting | Notes](#spotify-playlist-multi-level-sorting--notes)
 
-## Getting started
+#### Spotify Playlist Multi-Level Sorting | Additional Information
+* This cannot sort playlists that contain local files.
+* This will sort a Spotify playlist in the following multi-level order:
+    * artist
+    * release_date
+    * album
+    * disc_number
+    * track_number
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+#### Spotify Playlist Multi-Level Sorting | Execution
+* Prior to running this on your playlist, make a copy of it and test this on the copy.
+* This has been tested on the following playlist: [Spotify Playlist Multi-Level Sorting](https://open.spotify.com/playlist/47l4vufg3gAoVbOpSedwO5?si=852f7ce6eaa849c8)
+1. Create a Spotify application in the Spotify Developer Dashboard.
+    * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
+    * Use `http://localhost:3000/` for the Redirect URI.
+2. Clone the repository with `git clone https://gitlab.cybersanctuary.xyz/wolveraptor/spotify-playlist-multi-level-sorting.git`
+3. Navigate to the cloned repository via CLI.
+    * For Windows use `PowerShell` or `Command Prompt`.
+    * For Linux and MacOS use `Terminal`.
+4. Create a virtual environment.
+    * For Windows `Command Prompt` use `python.exe -m venv spmls`.
+    * For Windows `PowerShell` use `python.exe -m venv spmls`.
+    * For Linux and MacOS use `python3 -m venv spmls`.
+        * On Debian/Ubuntu systems, you may need to install the `python3-venv` package.
+            * Example: `sudo apt install python3-venv`
+5. Activate the virtual environment.
+    * For Windows `Command Prompt` use `spmls\Scripts\activate.bat`.
+    * For Windows `PowerShell` use `.\spmls\Scripts\Activate.ps1`.
+    * For Linux and MacOS use `source spmls/bin/activate`.
+6. Install required dependencies.
+    * For Windows `Command Prompt` use `python.exe -m pip install -r requirements.txt`.
+    * For Windows `PowerShell` use `python.exe -m pip install -r .\requirements.txt`.
+    * For Linux and MacOS use `python3 -m pip install -r requirements.txt`.
+7. Execute `spotify_playlist_multi-level_sorting.py` and supply the `Client ID` from the Spotify Developer Dashboard and the `Client Secret` from the Spotify Developer Dashboard.
+    * Client ID:
+    * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
+    * Client Secret:
+    * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
+    * For Windows `Command Prompt` use `python.exe spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
+    * For Windows `PowerShell` use `python.exe .\spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
+    * For Linux and MacOS use `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
+8. Follow the on-screen prompts.
+9. Deactivate the virtual environment.
+    * For Windows `Command Prompt` use `spmls\Scripts\deactivate.bat`.
+    * For Windows `PowerShell` use `deactivate`.
+    * For Linux and MacOS use `deactivate`.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.cybersanctuary.xyz/ssimon/spotify-playlist-multi-level-sorting.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.cybersanctuary.xyz/ssimon/spotify-playlist-multi-level-sorting/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+#### Spotify Playlist Multi-Level Sorting | Notes
+* To view example usage and the optional argument execute:
+    * Windows: `py spotify_playlist_multi-level_sorting.py -h` or `py spotify_playlist_multi-level_sorting.py --help`
+    * MacOS and Ubuntu: `python3 spotify_playlist_multi-level_sorting.py -h` or `python3 spotify_playlist_multi-level_sorting.py --help`
+* `0123456789` and `9876543210` are examples of `Client ID` and `Client Secret` respectively. Do not use these values as they will not work. You must enter the `Client ID` and `Client Secret` as they appear in the Spotify Developer Dashboard.
+* If the optional argument -ruri or --redirect_uri is supplied, the `Redirect URI` from the Spotify Developer Dashboard must be entered as well. This optional argument only needs to be supplied if a `Redirect URI` other than `http://localhost:3000` was configured in the Spotify Developer Dashboard.
