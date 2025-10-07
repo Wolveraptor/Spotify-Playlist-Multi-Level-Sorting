@@ -27,7 +27,7 @@ def get_current_users_profile(spotify_authorization):
 
     # Print current user's profile information in console.
     # print(json.dumps(current_users_profile_information_dictionary, indent=4, sort_keys=False))
-    
+
     # Return the value of id
     return current_users_profile_information_dictionary["id"]
 
