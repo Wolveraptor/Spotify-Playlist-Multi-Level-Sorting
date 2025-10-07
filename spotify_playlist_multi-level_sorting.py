@@ -21,7 +21,7 @@ argument_parser.add_argument("client_id", help="Client ID from Spotify Developer
 # Create required positional argument client_secret
 argument_parser.add_argument("client_secret", help="Client Secret from Spotify Developer Dashboard.")
 # Create optional argument -ruri/--redirect_uri
-argument_parser.add_argument("-ruri", "--redirect_uri", default="http://localhost:3000/", help="Redirect URI from Spotify Developer Dashboard. (Default = http://localhost:3000/)")
+argument_parser.add_argument("-ruri", "--redirect_uri", default="http://127.0.0.1:3000/", help="Redirect URI from Spotify Developer Dashboard. (Default = http://127.0.0.1:3000/)")
 # Assign arguments as namespace object to variable arguments_namespace_object
 arguments_namespace_object = argument_parser.parse_args()
 # Assign arguments as a dictionary to variable arguments_dictionary
