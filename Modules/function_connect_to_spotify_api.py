@@ -14,7 +14,7 @@ def connect_to_spotify_api(application_client_id, application_client_secret, app
                                                                       # Scopes required for obtaining current user's playlists can be found here: https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
                                                                       # Scopes required for modifying current user's playlists can be found here: https://developer.spotify.com/documentation/web-api/reference/reorder-or-replace-playlists-tracks
                                                                       scope="user-read-private user-read-email playlist-read-private playlist-modify-public playlist-modify-private"))
-    
+
     # Return the value of spotify_authorization
     return spotify_authorization
 
