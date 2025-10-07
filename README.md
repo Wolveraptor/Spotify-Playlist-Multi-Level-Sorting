@@ -26,7 +26,7 @@
 * This has been tested on the following playlist: [Spotify Playlist Multi-Level Sorting](https://open.spotify.com/playlist/47l4vufg3gAoVbOpSedwO5?si=852f7ce6eaa849c8)
 1. Create a Spotify application in the Spotify Developer Dashboard.
     * Steps for creating an application can be found [here](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app).
-    * Use `http://localhost:3000/` for the Redirect URI.
+    * Use `http://127.0.0.1:3000/` for the Redirect URI.
 2. Clone the repository with `git clone https://gitlab.cybersanctuary.xyz/wolveraptor/spotify-playlist-multi-level-sorting.git`
 3. Navigate to the cloned repository via CLI.
     * For Windows use `PowerShell` or `Command Prompt`.
