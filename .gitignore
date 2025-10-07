@@ -162,8 +162,10 @@ cython_debug/
 # spmls virtual environment
 spmls
 
-# spmls.bat Batch file
+# spmls Batch files
 spmls.bat
 
-# spmls.ps1 PowerShell Script file
+# spmls PowerShell Script files
 spmls.ps1
+spmls_python312.ps1
+spmls_python313.ps1
