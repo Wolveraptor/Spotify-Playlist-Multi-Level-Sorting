@@ -9,7 +9,7 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
                                                                    limit=100,
                                                                    offset=0,
                                                                    additional_types=['track'])
-                
+
     # Create empty list to store dictionaries.
     tracks_list = []
 
@@ -133,7 +133,7 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
     # Increments to take. Will gather 100 track ids at a time.
     step = 100
     # Create loop to iterate through tracks and append lists of 100 track ids to ids_list_of_lists
-    for track_ids in range(start, end, step): 
+    for track_ids in range(start, end, step):
         sliced_track_ids = track_ids
         ids_list_of_lists.append((ids_list[sliced_track_ids:sliced_track_ids+step]))
 
@@ -146,7 +146,7 @@ def sort_current_users_playlist(spotify_authorization, playlist_id):
     for ids_list in range(len(ids_list_of_lists)):
             spotify_authorization.playlist_add_items(playlist_id=playlist_id,
                                                      items=ids_list_of_lists[ids_list])
-    
+
     # Print update to console.
     print(f"Playlist has been sorted.")
 
