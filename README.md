@@ -47,9 +47,9 @@
     * For Linux and MacOS use `python3 -m pip install -r requirements.txt`.
 7. Execute `spotify_playlist_multi-level_sorting.py` and supply the `Client ID` from the Spotify Developer Dashboard and the `Client Secret` from the Spotify Developer Dashboard.
     * Client ID:
-    * ![alttext](/Images/spotify_developer_dashboard_client_id.png)
+    * ![alttext](Images/spotify_developer_dashboard_client_id.png)
     * Client Secret:
-    * ![alttext](/Images/spotify_developer_dashboard_client_secret.png)
+    * ![alttext](Images/spotify_developer_dashboard_client_secret.png)
     * For Windows `Command Prompt` use `python.exe spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
     * For Windows `PowerShell` use `python.exe .\spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
     * For Linux and MacOS use `python3 spotify_playlist_multi-level_sorting.py 0123456789 9876543210`.
