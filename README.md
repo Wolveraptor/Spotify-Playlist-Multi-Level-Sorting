@@ -8,9 +8,9 @@
 
 <!-- omit from toc -->
 ### Spotify Playlist Multi-Level Sorting | Table of Contents
-* [Spotify Playlist Multi-Level Sorting | Additional Information](#spotify-playlist-multi-level-sorting-additional-information)
-* [Spotify Playlist Multi-Level Sorting | Execution](#spotify-playlist-multi-level-sorting-execution)
-* [Spotify Playlist Multi-Level Sorting | Notes](#spotify-playlist-multi-level-sorting-notes)
+* [Spotify Playlist Multi-Level Sorting | Additional Information](#spotify-playlist-multi-level-sorting--additional-information)
+* [Spotify Playlist Multi-Level Sorting | Execution](#spotify-playlist-multi-level-sorting--execution)
+* [Spotify Playlist Multi-Level Sorting | Notes](#spotify-playlist-multi-level-sorting--notes)
 
 #### Spotify Playlist Multi-Level Sorting | Additional Information
 * This cannot sort playlists that contain local files.
